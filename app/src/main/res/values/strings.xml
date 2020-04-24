@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Wei0423</string>
+    <string name="strheight">身高:</string>
+    <string name="strname">姓名:</string>
+    <string name="strnextpage">下一頁</string>
+    <string name="strconfirm">確認</string>
+    <string name="strweight">體重:</string>
+    <string name="strtoolight">體重過輕</string>
+    <string name="strheavy">體重過重</string>
+</resources>
