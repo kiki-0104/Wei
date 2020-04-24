@@ -14,9 +14,9 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText a;
-    private EditText c;
-    private EditText e;
+    private EditText name;
+    private EditText height;
+    private EditText weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,22 +27,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void findView() {
-        a = findViewById(R.id.ed_name);
-        c = findViewById(R.id.ed_height);
-        e = findViewById(R.id.ed_weight);
+        name = findViewById(R.id.ed_name);
+        height = findViewById(R.id.ed_height);
+        weight = findViewById(R.id.ed_weight);
     }
 
     public void show(View view) {
         TextView b = findViewById(R.id.tv_showname);
-        b.setText("歡迎" + a.getText().toString());
+        b.setText( name.getText().toString());
         TextView d = findViewById(R.id.tv_showheight);
         TextView f = findViewById(R.id.tv_showweight);
-        f.setText("體重:" + e.getText().toString()+"kg");
+        f.setText( weight.getText().toString());
         ImageView view1 = (ImageView) findViewById(R.id.iv_pic);
-        double c_value = Double.parseDouble(c.getText().toString());
-        double e_value = Double.parseDouble(e.getText().toString());
+        double c_value = Double.parseDouble(height.getText().toString());
+        double e_value = Double.parseDouble(weight.getText().toString());
         double bmi = e_value / (c_value/100.0 * c_value/100.0);
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat("#.#");
 
 
         TextView g = findViewById(R.id.tv_showbmi);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 //            Toast.makeText(this, "體重過重", Toast.LENGTH_LONG).show();
             view1.setImageResource(R.drawable.bmi3);
         }else{
-            rem="strnormal";
+            rem="體重正常";
 //            Toast.makeText(this, "正常體重", Toast.LENGTH_LONG).show();
             view1.setImageResource(R.drawable.bmi2);
         }
@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void nextPage(View view) {
         Bundle bundle = new Bundle();
-        bundle.putString("height",c.getText().toString());
-        bundle.putString("weight",e.getText().toString());
-        bundle.putString("name",a.getText().toString());
+        bundle.putString("height",height.getText().toString());
+        bundle.putString("weight",weight.getText().toString());
+        bundle.putString("name",name.getText().toString());
 
         Intent intent = new Intent(this,showBMIActivity2.class);
         intent.putExtras(bundle);

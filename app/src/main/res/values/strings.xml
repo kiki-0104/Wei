@@ -5,9 +5,9 @@
     <string name="strnextpage">下一頁</string>
     <string name="strconfirm">確認</string>
     <string name="strweight">體重:</string>
-    <string name="strtoolight">體重過輕</string>
+
     <string name="strheavy">體重過重</string>
     <string name="strtoolight">體重過輕</string>
-    <string name="strheavy">體重過重</string>
+
     <string name="strnormal">正常體重</string>
 </resources>
